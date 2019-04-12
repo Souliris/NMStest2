@@ -1,0 +1,53 @@
+﻿@model IEnumerable<NMStest.Models.StarSystems>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SystemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StarType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EconomyType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConflictType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SystemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StarType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EconomyType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConflictType)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SystemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SystemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SystemId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
