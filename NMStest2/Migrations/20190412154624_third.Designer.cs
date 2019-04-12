@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NMStest2.Models;
 
 namespace NMStest2.Migrations
 {
     [DbContext(typeof(NMStest2Context))]
-    partial class NMStest2ContextModelSnapshot : ModelSnapshot
+    [Migration("20190412154624_third")]
+    partial class third
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,6 +52,8 @@ namespace NMStest2.Migrations
 
                     b.Property<int?>("PlanetId");
 
+                    b.Property<int>("foreignKey");
+
                     b.Property<string>("resourceName");
 
                     b.HasKey("ResourceId");
@@ -83,7 +87,7 @@ namespace NMStest2.Migrations
             modelBuilder.Entity("NMStest.Models.Planet", b =>
                 {
                     b.HasOne("NMStest.Models.StarSystems", "StarSystem")
-                        .WithMany("Planets")
+                        .WithMany("ListPlanets")
                         .HasForeignKey("SystemId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -91,7 +95,7 @@ namespace NMStest2.Migrations
             modelBuilder.Entity("NMStest.Models.Resource", b =>
                 {
                     b.HasOne("NMStest.Models.Planet")
-                        .WithMany("Resources")
+                        .WithMany("ListResources")
                         .HasForeignKey("PlanetId");
                 });
 #pragma warning restore 612, 618

@@ -13,14 +13,14 @@ namespace NMStest.Models
 
         public string PlanetName { get; set; }
         public string Sentinels { get; set; }
-        public Resource planetResource1 { get; set; }
-        public Resource planetResource2 { get; set; }
-        public Resource planetResource3 { get; set; }
-        public Resource planetResource4 { get; set; }
+        
         public bool HasAcientBones { get; set; }
         public bool HasSalvageScrap { get; set; }
 
+        public int SystemId { get; set; }
+        public StarSystems StarSystem { get; set; }
 
+        public ICollection<Resource> Resources { get; set; }
 
     }
 }

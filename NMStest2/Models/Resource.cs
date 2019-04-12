@@ -11,7 +11,7 @@ namespace NMStest.Models
         [Key]
         public int ResourceId { get; set; }
         public string resourceName { get; set; }
-
         
+
     }
 }

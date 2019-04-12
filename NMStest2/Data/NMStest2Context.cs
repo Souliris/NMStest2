@@ -18,5 +18,28 @@ namespace NMStest2.Models
         public DbSet<NMStest.Models.Planet> Planet { get; set; }
 
         public DbSet<NMStest.Models.Resource> Resource { get; set; }
+
+        // test
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<StarSystems>()
+        //        .HasMany(s => s.ListPlanets)
+        //        .WithOne();
+                
+                
+
+        //    modelBuilder.Entity<Planet>()
+        //        .HasMany(p => p.ListResources)
+        //        .WithOne();
+
+        //    //modelBuilder.Entity<Resource>()
+        //      //  .HasOne(r => r.resourceName)
+        //        //.WithMany(r => 
+
+        //}
+
+
     }
+
+    
 }

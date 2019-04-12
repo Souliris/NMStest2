@@ -18,16 +18,8 @@ namespace NMStest.Models
         public string StarType { get; set; }
         public string EconomyType { get; set; }
         public string ConflictType { get; set; }
+        public ICollection<Planet> Planets { get; set; }
 
-        public Planet Planet1 { get; set; }
-        public Planet Planet2 { get; set; }
-        public Planet Planet3 { get; set; }
-        public Planet Planet4 { get; set; }
-        public Planet Planet5 { get; set; }
-        public Planet Planet6 { get; set; }
-        public Planet Planet7 { get; set; }
-        public Planet Planet8 { get; set; }
-        public Planet Planet9 { get; set; }
-
+        
     }
 }
